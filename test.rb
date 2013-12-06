@@ -2,6 +2,12 @@ require 'bundler/setup'
 
 Bundler.require
 
+##
+#  :see_no_evil:
+def Cliver::detect!(*args)
+  args[0]
+end
+
 Capybara.register_driver :trifleJS do |app|
   Capybara::Poltergeist::Driver.new(app, phantomjs_options: ['--emulate:IE8'])
 end
